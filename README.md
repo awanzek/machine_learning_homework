@@ -7,9 +7,11 @@ These included:
 3. Undersampling
 4. SMOTEEN Combination (Over and Under) Sampling 
 
-Once the data was resampled, given the selected method, the model was fit to the training data using a logistic regression model. The balanced accuracy score, confusion matrix, and imbalanced classification report were obtained for all datasets in this model type. 
+Once the data was resampled, given the selected method, the model was fit to the training data using a logistic regression model. The balanced accuracy score, confusion matrix, and imbalanced classification report were obtained for all datasets in this model type.
 
-The following are important conclusions on data resampling:
+Please note in the following results, the negative(0) outcome refers to a loan status - 'high risk' and the positive(1) outcome refers to a loan status - 'low risk'.
+
+### The following are important conclusions on data resampling:
 
 * Which model had the best balanced accuracy score?
 
@@ -32,9 +34,25 @@ These included:
 1. Balanced Random Forest Classifier
 2. Easy Ensemble AdaBoost Classifier
 
+Please note in the following results, the negative(0) outcome refers to a loan status - 'high risk' and the positive(1) outcome refers to a loan status - 'low risk'.
 
-The following are important conclusions on ensemble learning:
+### The following are important conclusions on ensemble learning:
+
 * Which model had the best balanced accuracy score?
-* Which model had the best recall score?
+
+The Easy Ensemble AdaBoost Classifier has the best balanced accuracy score of 0.91. This is a very good score as a balanced accuracy score of 1 is a perfect score. The Random Forest Classifier did alrigh, but had a lower balanced accuracy score of 0.661.
+
+* Which model had the best recall score? 
+
+    The easy Ensemble AdaBoost Classifier had the best recall score with 0.84 recall for the negative(0) outcomes and 0.98 for the positive(1) outcomes. This is a very good recall for both types of classification. Again the Random Forest Classifier was not as strong. However, the Random Forest did have a recall of 1 for positive(1) outcomes which is really good, but it had a poor recall of only 0.32 for negative(0) outcomes.
 * Which model had the best geometric mean score?
+
+    The Easy Ensemble AdaBoost Classifer had the best geometric mean score of 0.91. The Random Forest Classifier had a geometric mean score of 0.57, so not as good.
 * What are the top three features?
+The top features by importance are:
+    1. Total_Rec_Prncp (Total Recent Principle) with importance score of 0.08. Accounts for 8% of influence.
+    2. Total_Pymt_Inv (Total Payment Inv) with importance score of 0.07. Accounts for 7% of influence.
+    3. Total_Rec_Int (Total Recent Interest) with importance score of 0.06. Accounts for 6% of influence.
+Thus, the top 3 features account for 21% of the influence on the result.
+
+Based on the results it is clear that the preferred model for fitting and predicting based on this data set would be the Easy Ensemble AdaBoost Classifier.
